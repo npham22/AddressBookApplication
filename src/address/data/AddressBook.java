@@ -9,8 +9,7 @@ import java.util.Comparator;
  */
 public class AddressBook {
     /* Class variables */
-    int index;
-    ArrayList<AddressEntry> addressEntryList = new ArrayList<AddressEntry>();
+    private final ArrayList<AddressEntry> addressEntryList = new ArrayList<AddressEntry>();
 
     /* Class methods */
 
@@ -18,8 +17,8 @@ public class AddressBook {
      * list iterates through the list and prints out the contents
      */
     public void list() {
-        for (index = 0; index < addressEntryList.size(); index++) {
-            System.out.println(addressEntryList.get(index));
+        for (AddressEntry addressEntry : addressEntryList) {
+            System.out.println(addressEntry);
         }
     }
 
