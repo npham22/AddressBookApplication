@@ -62,27 +62,22 @@ public class AddressBookApplication {
         FileReader inFile = new FileReader(filename);
         BufferedReader inFileReader = new BufferedReader(inFile);
 
-        do {
-            firstName = inFileReader.readLine();
+        firstName = inFileReader.readLine();
 
-            if (firstName == null) {
-                break;
-            }
-
-            else {
-                lastName = inFileReader.readLine();
-                street = inFileReader.readLine();
-                city = inFileReader.readLine();
-                state = inFileReader.readLine();
-                zip = inFileReader.readLine();
-                phone = inFileReader.readLine();
-                email = inFileReader.readLine();
-            }
+        while (firstName != null) {
+            lastName = inFileReader.readLine();
+            street = inFileReader.readLine();
+            city = inFileReader.readLine();
+            state = inFileReader.readLine();
+            zip = inFileReader.readLine();
+            phone = inFileReader.readLine();
+            email = inFileReader.readLine();
 
             AddressEntry addrEntry = new AddressEntry(firstName, lastName, street, city, state, zip, phone, email);
-
             ab.add(addrEntry);
-        } while (firstName != null);
+
+            firstName = inFileReader.readLine();
+        }
 
         inFileReader.close();
         inFile.close();
