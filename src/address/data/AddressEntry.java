@@ -5,6 +5,7 @@ package address.data;
  */
 public class AddressEntry {
     /* Class variables */
+
     private String firstName;
     private String lastName;
     private String street;
@@ -17,7 +18,7 @@ public class AddressEntry {
     /* Class methods */
 
     /**
-     * The default constructor of AddressEntry without any argument initialized to default Strings and value
+     * The default constructor of AddressEntry without any argument is initialized to default Strings and values
      */
     public AddressEntry() {
         setFirstName("");
@@ -30,13 +31,13 @@ public class AddressEntry {
     }
 
     /**
-     * The constructor of AddressEntry that initializes the data elements as the object is declared
+     * The constructor of AddressEntry that initializes the data elements from the parameters as the instance is declared
      * @param firstName The input String firstName
      * @param lastName The input String lastName
      * @param street The input String street
      * @param city The input String city
      * @param state The input String state abbreviated as two letters
-     * @param zip The input String zip
+     * @param zip The input String zip to be converted to an Integer
      * @param telephone The input String telephone
      * @param email The input String email
      */
@@ -52,7 +53,7 @@ public class AddressEntry {
     }
 
     /**
-     * toString gets all the data elements and formats them to print to standard output
+     * toString gathers all the data elements and formats them to print to standard output
      * @return The formatted String containing all of its data elements
      */
     public String toString() {
