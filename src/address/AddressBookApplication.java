@@ -9,40 +9,6 @@ import java.io.*;
  */
 public class AddressBookApplication {
 
-    public static void initAddressBookExercise(AddressBook ab) {
-        AddressEntry firstEntry = new AddressEntry("Christine", "Wheelock", "8160 Garden Avenue", "Southfield", "MI", "48034", "248-208-4777", "christine.wheelock89@yahoo.com");
-        AddressEntry secondEntry = new AddressEntry("Herbert", "Garnett", "62 Grant Drive", "Vernon Hills", "IL", "60061", "708-350-1142", "herbert.garnett77@gmail.com");
-
-        ab.add(firstEntry);
-        ab.add(secondEntry);
-
-        ab.list();
-    }
-
-    public static void init(String filename, AddressBook ab) throws IOException {
-        String[] addrArray = new String[8];
-        FileReader inFile = new FileReader(filename);
-        BufferedReader inFileReader = new BufferedReader(inFile);
-
-        do {
-            addrArray[0] = inFileReader.readLine();
-
-            if (addrArray[0] == null)
-                break;
-
-            for (int index = 1; index < 8; index++) {
-                addrArray[index] = inFileReader.readLine();
-            }
-
-            AddressEntry addrEntry = new AddressEntry(addrArray[0], addrArray[1], addrArray[2], addrArray[3], addrArray[4], addrArray[5], addrArray[6], addrArray[7]);
-
-            ab.add(addrEntry);
-        } while (addrArray[0] != null);
-
-        inFileReader.close();
-        inFile.close();
-    }
-
     public static void main(String[] args) {
         AddressBook addressBook = new AddressBook();
 
@@ -71,5 +37,54 @@ public class AddressBookApplication {
         System.out.println(myMenu.prompt_Telephone());
         System.out.println(myMenu.prompt_Email());
         */
+    }
+
+    public static void initAddressBookExercise(AddressBook ab) {
+        AddressEntry firstEntry = new AddressEntry("Christine", "Wheelock", "8160 Garden Avenue", "Southfield", "MI", "48034", "248-208-4777", "christine.wheelock89@yahoo.com");
+        AddressEntry secondEntry = new AddressEntry("Herbert", "Garnett", "62 Grant Drive", "Vernon Hills", "IL", "60061", "708-350-1142", "herbert.garnett77@gmail.com");
+
+        ab.add(firstEntry);
+        ab.add(secondEntry);
+
+        ab.list();
+    }
+
+    public static void init(String filename, AddressBook ab) throws IOException {
+        String firstName;
+        String lastName;
+        String street;
+        String city;
+        String state;
+        String zip;
+        String phone;
+        String email;
+
+        FileReader inFile = new FileReader(filename);
+        BufferedReader inFileReader = new BufferedReader(inFile);
+
+        do {
+            firstName = inFileReader.readLine();
+
+            if (firstName == null) {
+                break;
+            }
+
+            else {
+                lastName = inFileReader.readLine();
+                street = inFileReader.readLine();
+                city = inFileReader.readLine();
+                state = inFileReader.readLine();
+                zip = inFileReader.readLine();
+                phone = inFileReader.readLine();
+                email = inFileReader.readLine();
+            }
+
+            AddressEntry addrEntry = new AddressEntry(firstName, lastName, street, city, state, zip, phone, email);
+
+            ab.add(addrEntry);
+        } while (firstName != null);
+
+        inFileReader.close();
+        inFile.close();
     }
 }

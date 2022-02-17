@@ -33,6 +33,7 @@ public class AddressBook {
 
     /**
      * LastNameComparator is used for sorting AddressEntries by last name
+     * A special type of class is used
      */
     public static Comparator<AddressEntry> LastNameComparator = new Comparator<AddressEntry>() {
         /**
