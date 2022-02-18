@@ -13,12 +13,16 @@ public class AddressBookApplication {
         AddressBook addressBook = new AddressBook();
 
         try {
-            init("AddressInputDataFile.txt", addressBook);
+            addressBook.readFromFile("AddressInputDataFile.txt");
             addressBook.list();
         }
 
+        catch (FileNotFoundException missing) {
+            System.out.println("Cannot find file " + missing.getMessage());
+        }
+
         catch (IOException except) {
-            System.out.println("File I/O error occurred");
+            System.out.println("File I/O error occurred: " + except.getMessage());
         }
 
         // initAddressBookExercise(addressBook);
@@ -39,6 +43,10 @@ public class AddressBookApplication {
         */
     }
 
+    /**
+     * initAddressBookExercise adds AddressEntry objects to the AddressBook ab
+     * @param ab is the instance of the AddressBook class
+     */
     public static void initAddressBookExercise(AddressBook ab) {
         AddressEntry firstEntry = new AddressEntry("Christine", "Wheelock", "8160 Garden Avenue", "Southfield", "MI", "48034", "248-208-4777", "christine.wheelock89@yahoo.com");
         AddressEntry secondEntry = new AddressEntry("Herbert", "Garnett", "62 Grant Drive", "Vernon Hills", "IL", "60061", "708-350-1142", "herbert.garnett77@gmail.com");
@@ -47,39 +55,5 @@ public class AddressBookApplication {
         ab.add(secondEntry);
 
         ab.list();
-    }
-
-    public static void init(String filename, AddressBook ab) throws IOException {
-        String firstName;
-        String lastName;
-        String street;
-        String city;
-        String state;
-        String zip;
-        String phone;
-        String email;
-
-        FileReader inFile = new FileReader(filename);
-        BufferedReader inFileReader = new BufferedReader(inFile);
-
-        firstName = inFileReader.readLine();
-
-        while (firstName != null) {
-            lastName = inFileReader.readLine();
-            street = inFileReader.readLine();
-            city = inFileReader.readLine();
-            state = inFileReader.readLine();
-            zip = inFileReader.readLine();
-            phone = inFileReader.readLine();
-            email = inFileReader.readLine();
-
-            AddressEntry addrEntry = new AddressEntry(firstName, lastName, street, city, state, zip, phone, email);
-            ab.add(addrEntry);
-
-            firstName = inFileReader.readLine();
-        }
-
-        inFileReader.close();
-        inFile.close();
     }
 }
