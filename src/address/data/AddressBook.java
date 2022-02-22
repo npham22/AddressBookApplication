@@ -8,10 +8,15 @@ import java.util.Collections;
 import java.util.Comparator;
 
 /**
- * The AddressBook class contains a list of AddressEntries or contacts and methods to change the list
+ * The AddressBook class contains a list of AddressEntry items or contacts and methods to change the list
  */
 public class AddressBook {
     /* Class variables */
+
+    /**
+     * addressEntryList stores AddressEntry objects as an ArrayList.
+     * It does not account for duplications.
+     */
     private final ArrayList<AddressEntry> addressEntryList = new ArrayList<AddressEntry>();
 
     /* Class methods */

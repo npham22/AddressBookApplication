@@ -5,7 +5,10 @@ import address.data.AddressEntry;
 import java.io.*;
 
 /**
- *  main AddressBookApplication: purpose is to invoke some methods of the Menu class
+ * @author Nguyen Nam Pham
+ * @version 1.5
+ * @since 2022
+ * main AddressBookApplication: the purpose is to invoke some methods of the Menu class
  */
 public class AddressBookApplication {
 

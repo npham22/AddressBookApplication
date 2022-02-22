@@ -6,13 +6,48 @@ package address.data;
 public class AddressEntry {
     /* Class variables */
 
+    /**
+     * firstName stores the first name as a String
+     */
     private String firstName;
+
+    /**
+     * lastName stores the last name as a String
+     */
     private String lastName;
+
+    /**
+     * street stores the building or house number (if provided) and the street name as a String
+     */
     private String street;
+
+    /**
+     * city stores the name of the city as a String
+     */
     private String city;
+
+    /**
+     * state stores the name of the state as a String
+     * The state can be abbreviated by two letters or in full
+     */
     private String state;
+
+    /**
+     * zip stores the zipcode as an Integer class
+     * The constructor and the setZip method converts the input string into Integer
+     */
     private Integer zip;
+
+    /**
+     * phone stores the phone number as a String
+     * It does not distinguish between various phone formats
+     */
     private String phone;
+
+    /**
+     * email stores the email address as a String
+     * It does not do format checking of the email address
+     */
     private String email;
 
     /* Class methods */
