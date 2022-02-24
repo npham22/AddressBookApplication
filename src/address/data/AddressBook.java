@@ -49,7 +49,7 @@ public class AddressBook {
 
         for (AddressEntry addressEntry : addressEntryList) {
             if (addressEntry.getLastName().startsWith(lastName)) {
-                System.out.println("Entry found to remove");
+                System.out.println(addressEntry);
                 foundCount++;
             }
         }
