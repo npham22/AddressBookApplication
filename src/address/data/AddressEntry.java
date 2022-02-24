@@ -58,6 +58,7 @@ public class AddressEntry {
     public AddressEntry() {
         setFirstName("");
         setLastName("");
+        setStreet("");
         setCity("");
         setState("");
         setZip("0");
