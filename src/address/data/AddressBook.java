@@ -31,7 +31,8 @@ public class AddressBook {
     }
 
     /**
-     * add inserts an AddressEntry to the list
+     * add inserts an AddressEntry to the list and sorts the list by last names
+     * @param addressEntry is an AddressEntry as an input to this method
      */
     public void add(AddressEntry addressEntry) {
         this.addressEntryList.add(addressEntry);
