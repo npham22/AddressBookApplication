@@ -41,6 +41,25 @@ public class AddressBook {
     }
 
     /**
+     * remove deletes an AddressEntry object from the addressEntryList
+     * @param lastName is the last name as an input String
+     */
+    public void remove(String lastName) {
+        int foundCount = 0;
+
+        for (AddressEntry addressEntry : addressEntryList) {
+            if (addressEntry.getLastName().startsWith(lastName)) {
+                System.out.println("Entry found to remove");
+                foundCount++;
+            }
+        }
+
+        if (foundCount == 0) {
+            System.out.println("No entry found to remove");
+        }
+    }
+
+    /**
      * init populates the AddressBook with AddressEntry objects from a file
      * @param filename is the name of the file or the filepath to open
      * @throws IOException when the program cannot find the file or other I/O errors
@@ -77,6 +96,25 @@ public class AddressBook {
 
         inFileReader.close();
         inFile.close();
+    }
+
+    /**
+     * find searches for AddressEntry objects with last names that match the input String
+     * @param startOf_lastName is the search query to find AddressEntry objects
+     */
+    public void find(String startOf_lastName) {
+        int foundCount = 0;
+
+        for (AddressEntry addressEntry : addressEntryList) {
+            if (addressEntry.getLastName().toLowerCase().startsWith(startOf_lastName.toLowerCase())) {
+                System.out.println("Entry found");
+                foundCount++;
+            }
+        }
+
+        if (foundCount == 0) {
+            System.out.println("No entry found");
+        }
     }
 
     /**
