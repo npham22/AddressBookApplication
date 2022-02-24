@@ -32,18 +32,4 @@ public class AddressBookApplication {
             System.out.println("File I/O error occurred: " + except.getMessage());
         }
     }
-
-    /**
-     * initAddressBookExercise adds AddressEntry objects to the AddressBook ab
-     * @param ab is the instance of the AddressBook class
-     */
-    public static void initAddressBookExercise(AddressBook ab) {
-        AddressEntry firstEntry = new AddressEntry("Christine", "Wheelock", "8160 Garden Avenue", "Southfield", "MI", "48034", "248-208-4777", "christine.wheelock89@yahoo.com");
-        AddressEntry secondEntry = new AddressEntry("Herbert", "Garnett", "62 Grant Drive", "Vernon Hills", "IL", "60061", "708-350-1142", "herbert.garnett77@gmail.com");
-
-        ab.add(firstEntry);
-        ab.add(secondEntry);
-
-        ab.list();
-    }
 }
