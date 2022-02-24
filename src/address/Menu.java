@@ -11,7 +11,7 @@ public class Menu {
     /**
      * userInput is the object used to get the user input as Strings
      */
-    private static final Scanner userInput = new Scanner(System.in);
+    protected static final Scanner userInput = new Scanner(System.in);
 
     /**
      * prompt_FirstName generates a standard output prompt for the First Name to be entered
@@ -94,7 +94,7 @@ public class Menu {
      * prompt_Email generates a standard output prompt for the Email to be entered
      * @return The email String that the user inputted
      */
-    public String prompt_Email() {
+    public static String prompt_Email() {
         System.out.println("Email:");
         return userInput.nextLine();
     }
