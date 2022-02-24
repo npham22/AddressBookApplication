@@ -23,14 +23,27 @@ class AddressBookTest {
     }
 
     @Test
-    void list() {
+    void testList() {
+        firstBook.add(firstEntry);
+        secondBook.add(firstEntry);
 
+        firstBook.add(secondEntry);
+        secondBook.add(secondEntry);
+
+        for (AddressEntry addressEntryOne : firstBook.addressEntryList) {
+            for (AddressEntry addressEntryTwo : secondBook.addressEntryList) {
+                assertEquals(addressEntryOne, addressEntryTwo);
+            }
+        }
     }
 
     @Test
-    void add() {
+    void testAdd() {
         firstBook.add(firstEntry);
         secondBook.add(secondEntry);
+
+        assertEquals(firstEntry, firstBook.addressEntryList.get(0));
+        assertEquals(secondEntry, firstBook.addressEntryList.get(0));
     }
 
     @Test
