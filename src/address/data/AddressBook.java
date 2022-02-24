@@ -70,7 +70,7 @@ public class AddressBook {
         String street;
         String city;
         String state;
-        String zip;
+        int zip;
         String phone;
         String email;
 
@@ -84,7 +84,7 @@ public class AddressBook {
             street = inFileReader.readLine();
             city = inFileReader.readLine();
             state = inFileReader.readLine();
-            zip = inFileReader.readLine();
+            zip = Integer.parseInt(inFileReader.readLine());
             phone = inFileReader.readLine();
             email = inFileReader.readLine();
 
@@ -107,7 +107,7 @@ public class AddressBook {
 
         for (AddressEntry addressEntry : addressEntryList) {
             if (addressEntry.getLastName().toLowerCase().startsWith(startOf_lastName.toLowerCase())) {
-                System.out.println("Entry found");
+                System.out.println(addressEntry);
                 foundCount++;
             }
         }

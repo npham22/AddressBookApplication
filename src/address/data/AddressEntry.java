@@ -61,7 +61,7 @@ public class AddressEntry {
         setStreet("");
         setCity("");
         setState("");
-        setZip("0");
+        setZip(0);
         setTelephone("");
         setEmail("");
     }
@@ -77,7 +77,7 @@ public class AddressEntry {
      * @param telephone The input String telephone
      * @param email The input String email
      */
-    public AddressEntry(String firstName, String lastName, String street, String city, String state, String zip, String telephone, String email) {
+    public AddressEntry(String firstName, String lastName, String street, String city, String state, Integer zip, String telephone, String email) {
         setFirstName(firstName);
         setLastName(lastName);
         setStreet(street);
@@ -184,18 +184,18 @@ public class AddressEntry {
      * setZip sets the argument zip to the object's Integer zip
      * @param zip The input String zip
      */
-    public void setZip(String zip) {
+    public void setZip(Integer zip) {
         // Convert the String zip to an Integer and assign to zip
-        this.zip = Integer.parseInt(zip);
+        this.zip = zip;
     }
 
     /**
      * getZip gives the object's String zip to the caller
-     * @return The object's integer zip as a String
+     * @return The object's integer zip as an Integer
      */
-    public String getZip(){
+    public Integer getZip(){
         // Convert zip to a String then return
-        return Integer.toString(zip);
+        return zip;
     }
 
     /**
