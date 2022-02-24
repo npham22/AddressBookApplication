@@ -14,57 +14,57 @@ public class Menu {
 
     /**
      * prompt_FirstName generates a standard output prompt for the First Name to be entered
-     * @return The string "First Name:"
+     * @return The firstName String that the user inputted
      */
     public static String prompt_FirstName() {
-        System.out.println("First Name: ");
+        System.out.println("First Name:");
         return userInput.nextLine();
     }
 
     /**
      * prompt_LastName generates a standard output prompt for the Last Name to be entered
-     * @return The string "Last Name:"
+     * @return The lastName String that the user inputted
      */
     public static String prompt_LastName() {
-        System.out.println("Last Name: ");
+        System.out.println("Last Name:");
         return userInput.nextLine();
     }
 
     /**
      * prompt_Street generates a standard output prompt for the Street to be entered
-     * @return The string "Street:"
+     * @return The street String that the user inputted
      */
     public static String prompt_Street() {
-        System.out.println("Street: ");
+        System.out.println("Street:");
         return userInput.nextLine();
     }
 
     /**
      * prompt_City generates a standard output prompt for the City to be entered
-     * @return The string "City:"
+     * @return The city String that the user inputted
      */
     public static String prompt_City() {
-        System.out.println("City: ");
+        System.out.println("City:");
         return userInput.nextLine();
     }
 
     /**
      * prompt_State generates a standard output prompt for the State to be entered
-     * @return The string "State:"
+     * @return The state String that the user inputted
      */
     public static String prompt_State() {
-        System.out.println("State: ");
+        System.out.println("State:");
         return userInput.nextLine();
     }
 
     /**
      * prompt_Zip generates a standard output prompt for the Zip Code to be entered
-     * @return The string "Zip:"
+     * @return The zip integer converted from the String that the user inputted
      */
     public static int prompt_Zip() {
         String inZip;
 
-        System.out.println("Zip: ");
+        System.out.println("Zip:");
         inZip = userInput.nextLine();
 
         return Integer.parseInt(inZip);
@@ -72,19 +72,19 @@ public class Menu {
 
     /**
      * prompt_Telephone generates a standard output prompt for the Telephone to be entered
-     * @return The string "Telephone:"
+     * @return The telephone String that the user inputted
      */
     public static String prompt_Telephone() {
-        System.out.println("Telephone: ");
+        System.out.println("Telephone:");
         return userInput.nextLine();
     }
 
     /**
      * prompt_Email generates a standard output prompt for the Email to be entered
-     * @return The string "Email:"
+     * @return The email String that the user inputted
      */
     public String prompt_Email() {
-        System.out.println("Email: ");
+        System.out.println("Email:");
         return userInput.nextLine();
     }
 }
