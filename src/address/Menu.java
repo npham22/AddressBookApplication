@@ -150,21 +150,21 @@ public class Menu {
     /**
      * list prints out the title before the list
      */
-    public void list() {
-        System.out.println("Here is the list of contacts in the address book");
+    public String list() {
+        return "Here is the list of contacts in the address book";
     }
 
     /**
      * quit prints out the quit message
      */
-    public void quit() {
-        System.out.println("Quitting");
+    public String quit() {
+        return "Quitting";
     }
 
     /**
      * invalidChoice prints out the invalid choice message in the choice prompt
      */
-    public void invalidChoice() {
-        System.out.println("Invalid choice. Try again");
+    public String invalidChoice() {
+        return "Invalid choice. Try again";
     }
 }

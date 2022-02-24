@@ -25,12 +25,12 @@ public class AddressBookApplication {
         AddressBook addressBook = new AddressBook();
         Menu mainMenu = new Menu();
 
-        System.out.println(mainMenu.displayMenu());
-
-        System.out.println("Choice:");
-        choice = userInput.nextLine().toLowerCase(); // Just in case the user entered the choice in upper case
-
         while (!isQuit) {
+            System.out.println(mainMenu.displayMenu());
+
+            System.out.println("Choice:");
+            choice = userInput.nextLine().toLowerCase(); // Just in case the user entered the choice in upper case
+
             switch (choice.charAt(0)) {
                 case 'a':
                     try {
@@ -63,10 +63,10 @@ public class AddressBookApplication {
                     break;
                 case 'f':
                     isQuit = true;
-                    mainMenu.quit();
+                    System.out.println(mainMenu.quit());
                     break;
                 default:
-                    mainMenu.invalidChoice();
+                    System.out.println(mainMenu.invalidChoice());
             }
         }
     }
