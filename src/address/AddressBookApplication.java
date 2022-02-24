@@ -52,7 +52,7 @@ public class AddressBookApplication {
                     addressBook.add(mainMenu.add());
                     break;
                 case 'c':
-                    mainMenu.remove();
+                    addressBook.remove(mainMenu.remove());
                     break;
                 case 'd':
                     addressBook.find(mainMenu.find());
