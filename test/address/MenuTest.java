@@ -22,11 +22,14 @@ class MenuTest {
     @Test
     void testPrompt_FirstName() {
         String expectedString = "Christine";
-        //InputStream in = new ByteArrayInputStream(expectedString.getBytes());
+        InputStream inStream = new ByteArrayInputStream(expectedString.getBytes());
 
-        //System.setIn(in);
+        System.setIn(inStream);
 
-        //assertEquals(expectedString, Menu.prompt_FirstName());
+        String inputString = Menu.prompt_FirstName();
+        assertEquals("Christine", inputString);
+
+        System.setIn(System.in);
     }
 
     @Test
@@ -100,9 +103,27 @@ class MenuTest {
 
     @Test
     void testQuit() {
+        assertEquals("Quitting", firstMenu.quit());
+        assertEquals("Quitting", secondMenu.quit());
     }
 
     @Test
     void testInvalidChoice() {
+        assertEquals("Invalid choice. Try again", firstMenu.invalidChoice());
+        assertEquals("Invalid choice. Try again", secondMenu.invalidChoice());
+    }
+
+    @Test
+    void displayMenu() {
+        String expectedString = "Please enter your menu selection\n"
+                            + "a) Loading from file\n"
+                            + "b) Addition\n"
+                            + "c) Removal\n"
+                            + "d) Find\n"
+                            + "e) List\n"
+                            + "f) Quit\n";
+
+        assertEquals(expectedString, firstMenu.displayMenu());
+        assertEquals(expectedString, secondMenu.displayMenu());
     }
 }
