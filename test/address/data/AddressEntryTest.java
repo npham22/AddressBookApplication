@@ -1,6 +1,5 @@
 package address.data;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -13,8 +12,8 @@ class AddressEntryTest {
 
     @Test
     void testToString() {
-        firstEntry = new AddressEntry("Christine", "Wheelock", "8160 Garden Avenue", "Southfield", "MI", "48034", "248-208-4777", "christine.wheelock89@yahoo.com");
-        secondEntry = new AddressEntry("Herbert", "Garnett", "62 Grant Drive", "Vernon Hills", "IL", "60061", "708-350-1142", "herbert.garnett77@gmail.com");
+        firstEntry = new AddressEntry("Christine", "Wheelock", "8160 Garden Avenue", "Southfield", "MI", 48034, "248-208-4777", "christine.wheelock89@yahoo.com");
+        secondEntry = new AddressEntry("Herbert", "Garnett", "62 Grant Drive", "Vernon Hills", "IL", 60061, "708-350-1142", "herbert.garnett77@gmail.com");
 
         String firstString = firstEntry.getFirstName() + " " + firstEntry.getLastName() + "\n"
                         + firstEntry.getStreet() + "\n"
@@ -130,20 +129,20 @@ class AddressEntryTest {
 
     @Test
     void testSetZip() {
-        firstEntry.setZip("48034");
-        assertEquals("48034", firstEntry.getZip());
+        firstEntry.setZip(48034);
+        assertEquals(48034, firstEntry.getZip());
 
-        secondEntry.setZip("60061");
-        assertEquals("60061", secondEntry.getZip());
+        secondEntry.setZip(60061);
+        assertEquals(60061, secondEntry.getZip());
     }
 
     @Test
     void testGetZip() {
-        firstEntry.setZip("48034");
-        assertEquals("48034", firstEntry.getZip());
+        firstEntry.setZip(48034);
+        assertEquals(48034, firstEntry.getZip());
 
-        secondEntry.setZip("60061");
-        assertEquals("60061", secondEntry.getZip());
+        secondEntry.setZip(60061);
+        assertEquals(60061, secondEntry.getZip());
     }
 
     @Test
