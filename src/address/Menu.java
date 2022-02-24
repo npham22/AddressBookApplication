@@ -63,12 +63,22 @@ public class Menu {
      * @return The zip integer converted from the String that the user inputted
      */
     public static int prompt_Zip() {
+        int zip;
         String inZip;
 
         System.out.println("Zip:");
         inZip = userInput.nextLine();
 
-        return Integer.parseInt(inZip);
+        try {
+            zip = Integer.parseInt(inZip);
+        }
+
+        catch (NumberFormatException numExcept) {
+            System.out.println("The entered zip is not a number");
+            zip = 0;
+        }
+
+        return zip;
     }
 
     /**

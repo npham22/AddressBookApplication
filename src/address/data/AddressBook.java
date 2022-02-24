@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Scanner;
 
 /**
  * The AddressBook class contains a list of AddressEntry items or contacts and methods to change the list
@@ -45,17 +46,70 @@ public class AddressBook {
      * @param lastName is the last name as an input String
      */
     public void remove(String lastName) {
-        int foundCount = 0;
+        int index = 0;
+        String removeChoice;
+        Scanner inputObj = new Scanner(System.in);
+        ArrayList<Integer> foundList = new ArrayList<Integer>();
 
         for (AddressEntry addressEntry : addressEntryList) {
             if (addressEntry.getLastName().startsWith(lastName)) {
-                System.out.println(addressEntry);
-                foundCount++;
+                //System.out.println(foundCount + ". " + addressEntry);
+                foundList.add(index);
+            }
+            index++;
+        }
+
+        if (foundList.size() == 0) {
+            System.out.println("No entry found to remove");
+        }
+
+        else if (foundList.size() == 1) {
+            System.out.println("The following entry was found in the address book");
+
+            for (int foundIndex : foundList) {
+                System.out.println(addressEntryList.get(foundIndex));
+            }
+
+            System.out.println("Enter 'y' to remove the entry or 'n' to return to main menu");
+            removeChoice = inputObj.nextLine().toLowerCase();
+
+            if (removeChoice.charAt(0) == 'y') {
+                int removeInt = foundList.get(0);
+                addressEntryList.remove(removeInt);
             }
         }
 
-        if (foundCount == 0) {
-            System.out.println("No entry found to remove");
+        else {
+            index = 0;
+            int removeIndex;
+
+            System.out.println("The following entries were found in the address book.");
+            System.out.println("Choose the entry number you wish to remove");
+
+            for (int foundIndex : foundList) {
+                System.out.println(index + ". " + addressEntryList.get(foundIndex));
+                index++;
+            }
+
+            System.out.println();
+
+            try {
+                removeIndex = Integer.parseInt(inputObj.nextLine());
+
+                System.out.println(addressEntryList.get(foundList.get(removeIndex)));
+
+                System.out.println("Enter 'y' to remove the entry or 'n' to return to main menu");
+                removeChoice = inputObj.nextLine().toLowerCase();
+
+                if (removeChoice.charAt(0) == 'y') {
+                    int removeInt = foundList.get(removeIndex);
+                    addressEntryList.remove(removeInt);
+                }
+            }
+
+            catch (NumberFormatException numExcept) {
+                System.out.println("The input choice is not a number");
+            }
         }
     }
 
