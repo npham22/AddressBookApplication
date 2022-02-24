@@ -1,5 +1,6 @@
 package address;
 
+import address.data.AddressEntry;
 import java.util.Scanner;
 
 /**
@@ -86,5 +87,74 @@ public class Menu {
     public String prompt_Email() {
         System.out.println("Email:");
         return userInput.nextLine();
+    }
+
+    /**
+     * displayMenu displays the menu to the application
+     */
+    public String displayMenu() {
+        return "Please enter your menu selection\n"
+                + "a) Loading from file\n"
+                + "b) Addition\n"
+                + "c) Removal\n"
+                + "d) Find\n"
+                + "e) List\n"
+                + "f) Quit\n";
+    }
+
+    /**
+     * load fills AddressEntry objects from a file
+     * @return The file name as a String for the readFromFile method
+     */
+    public String load() {
+        System.out.println("Enter the filename:");
+        return userInput.nextLine();
+    }
+
+    /**
+     * add prompts the user for the required fields to fill an AddressEntry object
+     * @return The new AddressEntry object to add to the AddressBook
+     */
+    public AddressEntry add() {
+        return new AddressEntry(prompt_FirstName(), prompt_LastName(), prompt_Street(), prompt_City(), prompt_State(), prompt_Zip(), prompt_Telephone(), prompt_Email());
+    }
+
+    /**
+     * remove deletes a contact from the list
+     * @return The last name as a String to search and delete on user request
+     */
+    public String remove() {
+        System.out.println("Enter the last name of contact to remove");
+        return userInput.nextLine();
+    }
+
+    /**
+     * find prompts the user for the last name to search the list
+     * @return The String that the user inputted as the query to search
+     */
+    public String find() {
+        System.out.println("Enter the whole or beginning of the last name you wish to find");
+        return userInput.nextLine();
+    }
+
+    /**
+     * list prints out the title before the list
+     */
+    public void list() {
+        System.out.println("Here is the list of contacts in the address book");
+    }
+
+    /**
+     * quit prints out the quit message
+     */
+    public void quit() {
+        System.out.println("Quitting");
+    }
+
+    /**
+     * invalidChoice prints out the invalid choice message in the choice prompt
+     */
+    public void invalidChoice() {
+        System.out.println("Invalid choice. Try again");
     }
 }
