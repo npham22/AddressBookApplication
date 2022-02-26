@@ -10,6 +10,9 @@ class AddressEntryTest {
     private AddressEntry firstEntry;
     private AddressEntry secondEntry;
 
+    /**
+     * testToString tests the toString method
+     */
     @Test
     void testToString() {
         firstEntry = new AddressEntry("Christine", "Wheelock", "8160 Garden Avenue", "Southfield", "MI", 48034, "248-208-4777", "christine.wheelock89@yahoo.com");
@@ -31,12 +34,18 @@ class AddressEntryTest {
         assertEquals(secondString, secondEntry.toString());
     }
 
+    /**
+     * initEntryTest initializes the tests' AddressEntry objects
+     */
     @BeforeEach
     void initEntryTest() {
         firstEntry = new AddressEntry();
         secondEntry = new AddressEntry();
     }
 
+    /**
+     * testSetFirstName tests the setFirstName method
+     */
     @Test
     void testSetFirstName() {
         firstEntry.setFirstName("Christine");
@@ -46,6 +55,9 @@ class AddressEntryTest {
         assertEquals("Herbert", secondEntry.getFirstName());
     }
 
+    /**
+     * testGetFirstName tests the getFirstName method
+     */
     @Test
     void testGetFirstName() {
         firstEntry.setFirstName("Christine");
@@ -55,6 +67,9 @@ class AddressEntryTest {
         assertEquals("Herbert", secondEntry.getFirstName());
     }
 
+    /**
+     * testSetLastName tests the setLastName method
+     */
     @Test
     void testSetLastName() {
         firstEntry.setLastName("Wheelock");
@@ -64,6 +79,9 @@ class AddressEntryTest {
         assertEquals("Garnett", secondEntry.getLastName());
     }
 
+    /**
+     * testGetLastName tests the getLastName method
+     */
     @Test
     void testGetLastName() {
         firstEntry.setLastName("Wheelock");
@@ -73,6 +91,9 @@ class AddressEntryTest {
         assertEquals("Garnett", secondEntry.getLastName());
     }
 
+    /**
+     * testSetStreet tests the setStreet method
+     */
     @Test
     void testSetStreet() {
         firstEntry.setStreet("8160 Garden Avenue");
@@ -82,6 +103,9 @@ class AddressEntryTest {
         assertEquals("62 Grant Drive", secondEntry.getStreet());
     }
 
+    /**
+     * testGetStreet tests the getStreet method
+     */
     @Test
     void testGetStreet() {
         firstEntry.setStreet("8160 Garden Avenue");
@@ -91,6 +115,9 @@ class AddressEntryTest {
         assertEquals("62 Grant Drive", secondEntry.getStreet());
     }
 
+    /**
+     * testSetCity tests the setCity method
+     */
     @Test
     void testSetCity() {
         firstEntry.setCity("Southfield");
@@ -100,6 +127,9 @@ class AddressEntryTest {
         assertEquals("Vernon Hills", secondEntry.getCity());
     }
 
+    /**
+     * testGetCity tests the getCity method
+     */
     @Test
     void testGetCity() {
         firstEntry.setCity("Southfield");
@@ -109,6 +139,9 @@ class AddressEntryTest {
         assertEquals("Vernon Hills", secondEntry.getCity());
     }
 
+    /**
+     * testSetState tests the setState method
+     */
     @Test
     void testSetState() {
         firstEntry.setState("MI");
@@ -118,6 +151,9 @@ class AddressEntryTest {
         assertEquals("IL", secondEntry.getState());
     }
 
+    /**
+     * testGetState tests the getState method
+     */
     @Test
     void testGetState() {
         firstEntry.setState("MI");
@@ -127,6 +163,9 @@ class AddressEntryTest {
         assertEquals("IL", secondEntry.getState());
     }
 
+    /**
+     * testSetZip tests the setZip method
+     */
     @Test
     void testSetZip() {
         firstEntry.setZip(48034);
@@ -136,6 +175,9 @@ class AddressEntryTest {
         assertEquals(60061, secondEntry.getZip());
     }
 
+    /**
+     * testGetZip tests the getZip method
+     */
     @Test
     void testGetZip() {
         firstEntry.setZip(48034);
@@ -145,6 +187,9 @@ class AddressEntryTest {
         assertEquals(60061, secondEntry.getZip());
     }
 
+    /**
+     * testSetTelephone tests the setTelephone method
+     */
     @Test
     void testSetTelephone() {
         firstEntry.setTelephone("248-208-4777");
@@ -154,6 +199,9 @@ class AddressEntryTest {
         assertEquals("708-350-1142", secondEntry.getTelephone());
     }
 
+    /**
+     * testGetTelephone tests the getTelephone method
+     */
     @Test
     void testGetTelephone() {
         firstEntry.setTelephone("248-208-4777");
@@ -163,6 +211,9 @@ class AddressEntryTest {
         assertEquals("708-350-1142", secondEntry.getTelephone());
     }
 
+    /**
+     * testSetEmail tests the setEmail method
+     */
     @Test
     void testSetEmail() {
         firstEntry.setEmail("christine.wheelock89@yahoo.com");
@@ -172,6 +223,9 @@ class AddressEntryTest {
         assertEquals("herbert.garnett77@gmail.com", secondEntry.getEmail());
     }
 
+    /**
+     * testGetEmail tests the getEmail method
+     */
     @Test
     void testGetEmail() {
         firstEntry.setEmail("christine.wheelock89@yahoo.com");

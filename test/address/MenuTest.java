@@ -10,15 +10,20 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MenuTest {
 
-    Menu firstMenu;
-    Menu secondMenu;
+    // Static method tests
 
-    @BeforeEach
-    void initMenuTest() {
-        firstMenu = new Menu();
-        secondMenu = new Menu();
+    /**
+     * finMenuTest closes out after each test is done
+     */
+    @AfterEach
+    void finMenuTest() {
+        System.setIn(System.in);
+        System.setOut(System.out);
     }
 
+    /**
+     * testPrompt_FirstName tests the prompt_FirstName method
+     */
     @Test
     void testPrompt_FirstName() {
         String expectedString = "Christine";
@@ -32,6 +37,9 @@ class MenuTest {
         System.setIn(System.in);
     }
 
+    /**
+     * testPrompt_LastName tests the prompt_LastName method
+     */
     @Test
     void testPrompt_LastName() {
         String expectedString = "Wheelock";
@@ -39,6 +47,9 @@ class MenuTest {
         //assertEquals(expectedString, Menu.prompt_LastName());
     }
 
+    /**
+     * testPrompt_Street tests the prompt_Street method
+     */
     @Test
     void testPrompt_Street() {
         String expectedString = "Garden Avenue";
@@ -46,6 +57,9 @@ class MenuTest {
         //assertEquals(expectedString, Menu.prompt_Street());
     }
 
+    /**
+     * testPrompt_City tests the prompt_City method
+     */
     @Test
     void testPrompt_City() {
         String expectedString = "Southfield";
@@ -53,6 +67,9 @@ class MenuTest {
         //assertEquals(expectedString, Menu.prompt_City());
     }
 
+    /**
+     * testPrompt_State tests the prompt_State method
+     */
     @Test
     void testPrompt_State() {
         String expectedString = "MI";
@@ -60,6 +77,9 @@ class MenuTest {
         //assertEquals(expectedString, Menu.prompt_State());
     }
 
+    /**
+     * testPrompt_Zip tests the prompt_Zip method
+     */
     @Test
     void testPrompt_Zip() {
         int expectedValue = 48034;
@@ -67,6 +87,9 @@ class MenuTest {
         //assertEquals(expectedValue, Menu.prompt_Zip());
     }
 
+    /**
+     * testPrompt_Telephone tests the prompt_Telephone method
+     */
     @Test
     void testPrompt_Telephone() {
         String expectedString = "248-208-4777";
@@ -74,6 +97,9 @@ class MenuTest {
         //assertEquals(expectedString, Menu.prompt_Telephone());
     }
 
+    /**
+     * testPrompt_Email tests the prompt_Email method
+     */
     @Test
     void testPrompt_Email() {
         String expectedString = "christine.wheelock89@yahoo.com";
@@ -81,38 +107,63 @@ class MenuTest {
         //assertEquals(expectedString, Menu.prompt_Email());
     }
 
+    /**
+     * testLoad tests the load method
+     */
     @Test
     void testLoad() {
     }
 
+    /**
+     * testAdd tests the add method
+     */
     @Test
     void testAdd() {
+        // Format the AddressEntry as a String
     }
 
+    /**
+     * testRemove tests the remove method
+     */
     @Test
     void testRemove() {
     }
 
+    /**
+     * testFind tests the find method
+     */
     @Test
     void testFind() {
     }
 
+    /**
+     * testList tests the list method
+     */
     @Test
     void testList() {
     }
 
+    /**
+     * testQuit tests the return String from quit
+     */
     @Test
     void testQuit() {
         assertEquals("Quitting", firstMenu.quit());
         assertEquals("Quitting", secondMenu.quit());
     }
 
+    /**
+     * testInvalidChoice tests the return String from invalidChoice
+     */
     @Test
     void testInvalidChoice() {
         assertEquals("Invalid choice. Try again", firstMenu.invalidChoice());
         assertEquals("Invalid choice. Try again", secondMenu.invalidChoice());
     }
 
+    /**
+     * testDisplayMenu tests the return String from displayMenu
+     */
     @Test
     void displayMenu() {
         String expectedString = "Please enter your menu selection\n"
