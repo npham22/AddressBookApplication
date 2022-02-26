@@ -27,7 +27,8 @@ public class AddressBook {
      */
     public void list() {
         for (AddressEntry addressEntry : addressEntryList) {
-            System.out.println(addressEntry);
+            System.out.println();
+            System.out.print(addressEntry);
         }
     }
 

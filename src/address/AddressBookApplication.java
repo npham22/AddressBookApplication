@@ -68,6 +68,8 @@ public class AddressBookApplication {
                 default:
                     System.out.println(mainMenu.invalidChoice());
             }
+
+            System.out.println();
         }
     }
 }

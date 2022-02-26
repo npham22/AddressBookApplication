@@ -11,7 +11,7 @@ public class Menu {
     /**
      * userInput is the object used to get the user input as Strings
      */
-    protected static final Scanner userInput = new Scanner(System.in);
+    private static Scanner userInput = new Scanner(System.in);
 
     /**
      * prompt_FirstName generates a standard output prompt for the First Name to be entered
