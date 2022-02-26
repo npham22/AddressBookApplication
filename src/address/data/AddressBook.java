@@ -140,8 +140,8 @@ public class AddressBook {
             city = inFileReader.readLine();
             state = inFileReader.readLine();
             zip = Integer.parseInt(inFileReader.readLine());
-            phone = inFileReader.readLine();
             email = inFileReader.readLine();
+            phone = inFileReader.readLine();
 
             AddressEntry addrEntry = new AddressEntry(firstName, lastName, street, city, state, zip, phone, email);
             this.add(addrEntry);

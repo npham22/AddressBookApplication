@@ -73,7 +73,7 @@ public class AddressEntry {
      * @param street The input String street
      * @param city The input String city
      * @param state The input String state abbreviated as two letters
-     * @param zip The input String zip to be converted to an Integer
+     * @param zip The input Integer zip
      * @param telephone The input String telephone
      * @param email The input String email
      */
@@ -182,10 +182,9 @@ public class AddressEntry {
 
     /**
      * setZip sets the argument zip to the object's Integer zip
-     * @param zip The input String zip
+     * @param zip The input Integer zip
      */
     public void setZip(Integer zip) {
-        // Convert the String zip to an Integer and assign to zip
         this.zip = zip;
     }
 
@@ -193,8 +192,7 @@ public class AddressEntry {
      * getZip gives the object's String zip to the caller
      * @return The object's integer zip as an Integer
      */
-    public Integer getZip(){
-        // Convert zip to a String then return
+    public Integer getZip() {
         return zip;
     }
 
